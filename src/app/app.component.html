@@ -1,0 +1,40 @@
+  <h1>ALPACA GENERATOR</h1>
+<div class="parent">
+  <div class="child1">
+    <div>
+      <div class="background">
+        <img [src]="imageParts.get('backgrounds')">
+
+        <img class="default" [src]="imageParts.get('ears')">
+        <img class="default" [src]="imageParts.get('neck')">
+        <img class="default" src='..\\assets\\alpaca\\nose.png'>
+        <img class="default" [src]="imageParts.get('hair')">
+        <img class="default" [src]="imageParts.get('accessories')">
+        <img class="default" [src]="imageParts.get('eyes')">
+        <img class="default" [src]="imageParts.get('mouth')">
+        <img class="default" [src]="imageParts.get('leg')">
+
+      </div>
+    </div>
+    <button type="button" class="btn btn-secondary randomn-bt" (click)="randomize()">Randomize</button>
+  </div>
+
+  <div class="child2">
+    <h5>ACCESORIZE THE ALPACA'S</h5>
+     <div class="buttons">
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('accessories')">Accessories</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('hair')">Hair</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('ears')">Ears</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('eyes')">Eyes</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('mouth')">Mouth</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('neck')">Neck</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('leg')">Leg</button>
+        <button type="button" class="btn btn-primary" (click)="chooseGroup('backgrounds')">Background</button>
+     </div>
+
+      <h5>STYLE</h5>
+      <div class="buttons">
+        <button type="button" class="btn btn-primary" *ngFor="let category of selectedGroup.categories" (click)="changeCategoryImage(category)">{{formatInputCategory(category)}}</button>
+      </div>
+  </div>
+</div>
